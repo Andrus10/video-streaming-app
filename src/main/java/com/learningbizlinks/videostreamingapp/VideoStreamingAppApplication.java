@@ -1,15 +1,14 @@
 package com.learningbizlinks.videostreamingapp;
 
-import com.learningbizlinks.videostreamingapp.app.Disney;
-import com.learningbizlinks.videostreamingapp.app.HBO;
-import com.learningbizlinks.videostreamingapp.app.Netflix;
-import com.learningbizlinks.videostreamingapp.app.YouTube;
+import com.learningbizlinks.videostreamingapp.config.AppConfig;
 import com.learningbizlinks.videostreamingapp.runner.StreamingRunner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class VideoStreamingAppApplication {
 
 	public static void main(String[] args) {
-		Disney disney = new Disney();
+		/*Disney disney = new Disney();
 		HBO hbo = new HBO();
 		Netflix netflix = new Netflix();
 		YouTube youTube = new YouTube();
@@ -28,7 +27,10 @@ public class VideoStreamingAppApplication {
 
 		System.out.println("YouTube TV");
 		StreamingRunner streamingYoutube = new StreamingRunner(youTube);
-		streamingYoutube.run();
-	}
+		streamingYoutube.run();*/
 
+		// Iteración 3
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		ctx.getBean(StreamingRunner.class).run();
+	}
 }

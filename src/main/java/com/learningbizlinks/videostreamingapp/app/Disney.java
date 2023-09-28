@@ -1,5 +1,8 @@
 package com.learningbizlinks.videostreamingapp.app;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Disney implements StreamingApp {
     @Override
     public void login() {
